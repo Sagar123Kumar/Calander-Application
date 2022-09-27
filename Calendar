@@ -1,0 +1,206 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int a,b=1,t=1,j,h,n=0,i,q,w=0,en=0,e3=1,he=0,d0=3,md=6,sm=9,mo=0,ko;
+    char c[12][5]={"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"},s[30];
+    int z[12]={6,2,2,5,7,3,5,1,4,6,2,4},x[12]={31,28,31,30,31,30,31,31,30,31,30,31},bs[12],ds[12];
+    //system("COLOR de");
+    system("COLOR 9e"); //df
+    printf("\n\n");
+    printf("Enter your name : ");
+    gets(s);
+    system("cls");
+    printf("\n");
+    printf("\n%75c%cSAGAR's CALENDAR%c\n%70c%c**************************%c\n",32,3,3,32,3,3);
+            printf("%15c",32);
+        for(w=0;w<135;w++)
+         printf("%c",2);
+         printf("\n\n");
+    printf("\t\t\t     DATE  : %s",__DATE__);
+    printf("\t\t%cHey, %s Welcome to my Calender enjoy it!%c\t\t\t",3,s,3);
+    printf("TIME  : %s",__TIME__);
+    printf("\n");
+    printf("%15c",32);
+    for(w=0;w<135;w++)
+         printf("%c",2);
+
+
+      //  printf("\n%26c%c***********************%c%9c%c****************************************************%c%8c%c***********************%c",32,3,3,32,2,2,32,3,3);
+        printf("\n");
+    point:
+        e3++;
+            printf("%15c",32);
+            en=0;
+        for(w=0;w<135;w++)
+        printf("%c",2);
+        w=0;
+    printf("\n\n");
+    if(e3==2){
+        n=0;
+    mo=3;
+}
+    else if(e3==3){
+        n=3;
+        mo=6;
+    }
+else if(e3==4){
+    n=6;
+    mo=9;
+}
+else if(e3==5){
+    n=9;
+    mo=12;
+}
+    for(i=n;i<mo;i++)
+    printf("\t\t\t     %s - 2022\t\t",c[i]);
+    printf("\n");
+    for(i=1;i<4;i++)
+        printf("\t\t\t%c******************%c\t",2,2);
+        printf("\n\n");
+    for(i=1;i<4;i++)
+        printf("\t\t  MON  TUE  WED  THU  FRI  SAT  SUN");
+        printf("\n\n");
+    for(i=n;i<mo;i++)
+    {
+        a=z[i];
+        j=x[i];
+     switch(a)
+    {
+        case 1:
+            printf("%5d",t);
+            break;
+        case 2:
+                printf("%10d",t);
+            break;
+        case 3:
+            printf("%15d",t);
+            break;
+        case 4:
+            printf("%20d",t);
+            break;
+        case 5:
+            printf("%40d",t);
+            break;
+        case 6:
+            printf("%45d",t);
+            break;
+        case 7:
+            printf("%35d",t);
+            break;
+        default:
+            printf("100");
+    }
+    h=8-a;
+    for(q=2;q<=h;q++){
+        printf("%5d",q);
+    }
+        bs[i]=q-1;
+w++;
+if(w!=3){
+        printf("\t       ");
+    continue;
+    }
+else{
+        printf("\n\n\n");
+        goto start1;
+}
+}
+    // second boloe+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    start1:
+    for(i=n;i<mo;i++)
+    {
+        if(e3==2){
+        i=he;
+        ko=he;
+    }
+    else if(e3==3){
+            i=d0;
+            ko=d0;
+        }
+    else if(e3==4){
+        i=md;
+        ko=md;
+    }
+    else if(e3==5){
+        i=sm;
+        ko=sm;
+    }
+        a=z[i];
+        j=x[i];
+        if(e3==2){
+             if(en==3&&he==2)
+            printf("%30c",32);
+        }
+        else if(e3==3){
+        if(en==3&&he==1)
+        printf("%10c",32);
+        else if(en==4&&he==1)
+            printf("%40c",32);
+        }
+        else if(e3==4||e3==5){
+            if(en==3&&he==2)
+                printf("%20c",32);
+        }
+    printf("\t       ");
+        h=bs[ko];
+    for(i=h+1;i<=j&&b!=8;i++)
+    {
+    printf("%5d",i);
+    b++;
+    }
+    b=1;
+    ds[ko]=i-1;
+    he++;
+    d0++;
+    i++;
+    md++;
+    sm++;
+    if(he!=3){
+            h=0;
+            goto start1;
+    }
+    else{
+            he=0,d0=3,md=6,sm=9;
+            break;
+    }
+    }
+    printf("\n\n\n");
+    en++;
+    for(i=n;i<mo;i++)
+        bs[i]=ds[i];
+        for(i=n;i<mo;i++)
+            ds[i]=0;
+    if(en>0&&en<5){
+            h=0;d0=3,he=0,md=6,sm=9,i=0,ko=0;
+    goto start1;
+}
+        else{
+        goto stop;
+    }
+stop:
+        if(e3<5){
+        for(i=0;i<9;i++){
+        bs[i]=0;
+        ds[i]=0;
+        }
+i=0;
+        goto point;
+        }
+        else
+            printf("Sagar");
+            while(1)
+{
+    sleep(1);
+    system("Color eA");
+    sleep(1);
+    system("Color e3");
+    sleep(1);
+    system("Color eD");
+    sleep(1);
+    system("Color e8");
+    sleep(1);
+    system("Color e9");
+}
+getch();
+}
